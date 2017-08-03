@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include <string.h>
 
 unsigned long ToDec(const char str[ ]){
     short i = 0;
@@ -19,25 +20,40 @@ unsigned long ToDec(const char str[ ]){
     return (x);
 }
 
+void ToBinary(long val){
+    char str1[256] = "";
+    char str2[256];
+    int oneByte;
+    while(val>0){
+        oneByte = (int) val % 2;
+        sprintf(str2, "%d", oneByte);
+        strcat(str1,str2);
+        val /= 2;
+    }
+
+    printf("Binary = %s\n\n",str1);
+
+}
+
 int main(){
     // Question 1
     int decimalArray[3] = {12,185,294};;
     int binary = 0;
-    int devideValue = 1;
+    int valueUp = 1;
     printf("---- Question 1 ----\n");
     
     for(int i=0;i<sizeof(decimalArray)/sizeof(int);i++){
         printf("Decimal = %d\n",decimalArray[i]);
         while(decimalArray[i] > 0){
-            binary = binary + (decimalArray[i] % 2) * devideValue;
+            binary = binary + (decimalArray[i] % 2) * valueUp;
             decimalArray[i] = decimalArray[i] / 2;
-            devideValue = devideValue * 10;
+            valueUp = valueUp * 10;
         }
         // answer
         printf("Binary = %d\n\n",binary);
         // reset
         binary = 0;
-        devideValue = 1;
+        valueUp = 1;
     }
     
 
@@ -140,8 +156,14 @@ int main(){
     }
 
     // Question 6
-    char hexadecimalArray2[3][6] = {"1A3B","ABCD","111111"};
-
+    printf("---- Question 6 ----\n");
+    char hexadecimalArray2[3][7] = {"1A3B","ABCD","111111"};
+    unsigned long decimalLong = 0; 
+    for(int i=0;i<3;i++){
+        printf("Hexadecimal = 0x%s\n",hexadecimalArray2[i]);
+        decimalLong = ToDec(hexadecimalArray2[i]);
+        ToBinary(decimalLong);
+    }
 
     return 0;
 }
