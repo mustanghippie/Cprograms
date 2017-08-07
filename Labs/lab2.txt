@@ -1,0 +1,30 @@
+// Question 1
+Inverts a positive number then add 1.
+
+// Question 2
+1. 10111
+2. 10101
+3. 11001
+4. 11111
+
+// Question 3
+First number is started from 0.
+
+// Question 4
+2's complement can calculate a negative number by using addition.
+
+// Question 5
+First of all, you calculate 7 from decimal form to binary form.
+It's going to be 0111.
+
+// Question 6
+First of all, you calculate 7 from decimal form to binary form.
+It's going to be 0111.
+Then you invert 0111 to 1000.
+In addition, you add 1 to 1000, so an answer is 1001.
+
+// Question 7
+
+
+// Question 8
+
