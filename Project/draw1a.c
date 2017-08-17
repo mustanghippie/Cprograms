@@ -105,22 +105,4 @@ void dispStatistics(FILE *fp) {
 	printf("%d translate command(s)\n\n", translateCount);
 	printf("%d child command(s)\n\n", childCount);
 	printf("%d comment(s)\n\n", commentCount);
-
-	// // Check the file size
-	// fseek(fp, 0, SEEK_END);
-	// long fsize = ftell(fp);
-	// fseek(fp, 0, SEEK_SET);
-
-	// char *str = malloc(fsize + 1);
-	// fread(str, fsize, 1, fp);
-
-	// const char s[2] = " ";
-	// char *token = strtok(str, s);
-	// printf("token: %s \n", token);
-
-// 	while( token != NULL ) {
-//		printf( " %s\n", token );
-//		token = strtok(NULL, s);
-//	}
-
 }
